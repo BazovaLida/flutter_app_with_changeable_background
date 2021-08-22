@@ -1,0 +1,38 @@
+name: app_with_changeable_background
+description: Flutter application with a changeable background. The project has unit-testing.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none'
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  cupertino_icons: ^1.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The following adds functionality for writing tests in Dart
+  test:
+
+
+# The following section is specific to Flutter.
+flutter:
+  uses-material-design: true
+
+  # The following adds custom font to the application
+  fonts:
+    - family: Monospace
+      fonts:
+        - asset: fonts/Monospace.ttf
