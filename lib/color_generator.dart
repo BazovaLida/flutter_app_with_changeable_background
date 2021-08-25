@@ -21,7 +21,9 @@ class ColorGenerator {
     int green = _generatePrimaryColor();
     int blue = _generatePrimaryColor();
 
-    _generatedColor = Color.fromRGBO(red, green, blue, _generateOpacity());
+    double op = _generateOpacity();
+
+    _generatedColor = Color.fromRGBO(red, green, blue, op);
 
     // if background color is light, color for text is black; otherwise - white
     _contrastColor = (red + green + blue > 384) ? Colors.black : Colors.white;
