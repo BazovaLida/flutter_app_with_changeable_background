@@ -17,12 +17,21 @@ class ColorGenerator {
   // set _contrastColor to white or black depending on luminance of _generatedColor
   void generate() {
 
-    int red = _random.nextInt(256);
-    int green = _random.nextInt(256);
-    int blue = _random.nextInt(256);
+    int red = _generatePrimaryColor();
+    int green = _generatePrimaryColor();
+    int blue = _generatePrimaryColor();
 
-    _generatedColor = Color.fromRGBO(red, green, blue, 1);
+    _generatedColor = Color.fromRGBO(red, green, blue, _generateOpacity());
 
+    // if background color is light, color for text is black; otherwise - white
     _contrastColor = (red + green + blue > 384) ? Colors.black : Colors.white;
+  }
+
+  // generation value from 0 (including 0) to 256(exclusive)
+  int _generatePrimaryColor() => _random.nextInt(257) - 1;
+
+  double _generateOpacity() {
+    double op = (_random.nextDouble() * 1.1);
+    return op > 1.0 ? 1.0 : op;
   }
 }
