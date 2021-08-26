@@ -6,32 +6,19 @@ import 'package:flutter/material.dart';
 
 void main() {
   group('ColorGenerator', () {
-    test('_generatedColor should be white and _contrastColor should be black', () {
-      var cg = ColorGenerator();
+    test('_generatedColor should be white', () {
+      final cg = ColorGenerator();
 
       expect(cg.getGeneratedColor(), Colors.white);
-      expect(cg.getContrastColor(), Colors.black);
     });
 
     test(
-        '_generatedColor should be changed to new random color. '
-            '_contrastColor should be black if the _generatedColor is light; '
-            'white if _generatedColor is dark', () {
+        '_generatedColor should be changed to new random color', () {
       final cg = ColorGenerator();
 
-      //testing _generatedColor variable
       Color initialColor = cg.getGeneratedColor();
       cg.generate();
-      Color generatedColor = cg.getGeneratedColor();
-      expect(generatedColor, isNot(initialColor));
-
-      // testing _contrastColor variable
-      bool genColorIsLight = (generatedColor.red + generatedColor.green +
-          generatedColor.blue) > 384;
-      if (genColorIsLight)
-        expect(cg.getContrastColor(), Colors.black);
-      else
-        expect(cg.getContrastColor(), Colors.white);
+      expect(cg.getGeneratedColor(), isNot(initialColor));
     });
   });
 }

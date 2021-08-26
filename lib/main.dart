@@ -40,7 +40,7 @@ class _TapActivePageState extends State<TapActivePage> {
             child: Text("Hey there",
                 textScaleFactor: 3.0,
                 style: TextStyle(
-                    color: colorGenerator.getContrastColor(),
+                    color: Colors.black,
                     fontFamily: 'Monospace')),
           ),
           backgroundColor: colorGenerator.getGeneratedColor(),
